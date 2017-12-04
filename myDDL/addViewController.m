@@ -6,13 +6,13 @@
 //  Copyright © 2017年 University of leeds. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "addViewController.h"
 
-@interface FirstViewController ()
+@interface addViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation addViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
