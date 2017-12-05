@@ -109,6 +109,17 @@
                                     <action selector="courseButtonClick:" destination="9pv-A4-QxB" eventType="touchUpInside" id="njW-lU-9ks"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uT-6E-YF6">
+                                <rect key="frame" x="0.0" y="561" width="375" height="57"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="Add new Deadline">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ddLButtonClick:" destination="9pv-A4-QxB" eventType="touchUpInside" id="IOK-bJ-ME6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -117,12 +128,14 @@
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="OjX-lT-adG" secondAttribute="trailing" constant="16" id="9eA-bP-uf7"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="5Ec-NT-rsK" secondAttribute="trailing" constant="16" id="ArX-GE-s2f"/>
                             <constraint firstItem="ePk-iS-OYE" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="B18-tk-uHP"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="4uT-6E-YF6" secondAttribute="bottom" id="FlH-NL-vPt"/>
                             <constraint firstItem="WKF-XL-Y4F" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="113" id="FsV-gG-E8X"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="WKF-XL-Y4F" secondAttribute="trailing" constant="16" id="I0S-jT-TyZ"/>
                             <constraint firstItem="goH-9o-1oQ" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="113" id="Jd9-5c-vU6"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="3gW-P3-rJh" secondAttribute="trailing" constant="16" id="Lcd-Kl-sgR"/>
                             <constraint firstItem="Z0K-bb-YQc" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="113" id="LjE-t2-hVK"/>
                             <constraint firstItem="LZh-hT-g39" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="19" id="Lqv-dW-RxJ"/>
+                            <constraint firstItem="4uT-6E-YF6" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="MY0-kY-VIT"/>
                             <constraint firstItem="5Ec-NT-rsK" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="113" id="NKo-D1-Wjy"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Xa1-Bz-alW" secondAttribute="trailing" constant="16" id="Nlc-7E-11M"/>
                             <constraint firstItem="Zx1-Fm-GXG" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="113" id="Sfb-UV-EgW"/>
@@ -134,8 +147,10 @@
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="LZh-hT-g39" secondAttribute="bottom" constant="274" id="b3h-X2-tdm"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="MlY-jJ-1h6" secondAttribute="bottom" constant="91" id="cIQ-ic-Ces"/>
                             <constraint firstItem="3gW-P3-rJh" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="113" id="fUX-Mp-q0d"/>
+                            <constraint firstItem="4uT-6E-YF6" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="497" id="jVS-Mh-Rgn"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="goH-9o-1oQ" secondAttribute="trailing" constant="16" id="oeD-Om-e5n"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="WKF-XL-Y4F" secondAttribute="bottom" constant="272" id="ops-Dr-rSj"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="4uT-6E-YF6" secondAttribute="trailing" id="p80-Ua-hC9"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="3gW-P3-rJh" secondAttribute="bottom" constant="90" id="qeQ-p4-Shh"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="eNQ-yw-7lL" secondAttribute="bottom" constant="210" id="sMc-xP-6ul"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="goH-9o-1oQ" secondAttribute="bottom" constant="210" id="ubT-eh-DaP"/>
@@ -188,14 +203,29 @@
                     <view key="view" contentMode="scaleToFill" id="pf5-gb-31R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T7p-Td-I41">
+                                <rect key="frame" x="0.0" y="184" width="375" height="434"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="T7p-Td-I41" firstAttribute="leading" secondItem="qaw-Bg-PKB" secondAttribute="leading" id="5wU-NP-7tU"/>
+                            <constraint firstItem="qaw-Bg-PKB" firstAttribute="bottom" secondItem="T7p-Td-I41" secondAttribute="bottom" id="P7x-Y3-gVJ"/>
+                            <constraint firstItem="qaw-Bg-PKB" firstAttribute="trailing" secondItem="T7p-Td-I41" secondAttribute="trailing" id="UFF-0r-U81"/>
+                            <constraint firstItem="T7p-Td-I41" firstAttribute="top" secondItem="qaw-Bg-PKB" secondAttribute="top" constant="120" id="fNH-Ix-raQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qaw-Bg-PKB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="VIEW" image="view" selectedImage="viewSelected" id="h0w-u2-FdB"/>
+                    <connections>
+                        <outlet property="tableView" destination="T7p-Td-I41" id="sU8-8a-GlW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofv-hY-o2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="279" y="342"/>
+            <point key="canvasLocation" x="277.60000000000002" y="341.37931034482762"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="X2H-l4-9ly">

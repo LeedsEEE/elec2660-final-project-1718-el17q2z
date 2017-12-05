@@ -7,6 +7,7 @@
 //
 
 #import "addViewController.h"
+#import "ClassModel.h"
 
 @interface addViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
@@ -19,21 +20,23 @@
 @property (weak, nonatomic) IBOutlet UITextField *typeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *submitTextField;
 
-//all arrays needed for the picker
+//all arrays needed for the time picker
 @property (nonatomic, strong) NSArray *yearArray;
 @property (nonatomic, strong) NSArray *monthArray;
 @property (nonatomic, strong) NSArray *dayArray;
-@property (nonatomic, strong) NSArray *timeArray;
+@property (nonatomic, strong) NSArray *hourArray;
 @property (nonatomic, strong) NSArray *minArray;
 @property (nonatomic, strong) NSArray *secondArray;
 
+//variables for the 'time' text field
 @property (nonatomic, copy) NSString *year;
 @property (nonatomic, copy) NSString *month;
 @property (nonatomic, copy) NSString *day;
-@property (nonatomic, copy) NSString *time;
+@property (nonatomic, copy) NSString *hour;
 @property (nonatomic, copy) NSString *min;
 @property (nonatomic, copy) NSString *second;
 
+//arrays needed for the other 3 picker
 @property (nonatomic, strong) NSArray *courseArray;
 @property (nonatomic, strong) NSArray *typeArray;
 @property (nonatomic, strong) NSArray *submitArray;
@@ -48,36 +51,56 @@
     self.type = @"course";
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
 }
 
+//four buttons are connected together, each button connected to one picker
 - (IBAction)courseButtonClick:(UIButton *)button {
     [self.pickView removeFromSuperview];
-    if (button.tag == 100) {
+    if (button.tag == 100) {            //the first button
         self.type = @"course";
-    } else if (button.tag == 101) {
+    } else if (button.tag == 101) {     //the second button
         self.type = @"time";
-    } else if (button.tag == 102) {
+    } else if (button.tag == 102) {     //the third button
         self.type = @"type";
-    } else if (button.tag == 103) {
+    } else if (button.tag == 103) {     //the fourth button
         self.type = @"submit";
-    }
+    }                                   //different tag were set for each button
     [self.view addSubview:self.pickView];
     [self.pickView reloadAllComponents];
 }
 
+- (IBAction)ddLButtonClick:(UIButton *)sender {
+    ClassModel *model = [[ClassModel alloc] init];
+    model.name = self.courseTextField.text;
+    model.time = self.timeTextField.text;
+    model.type = self.typeTextField.text;
+    model.submit = self.submitTextField.text;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ddLButtonClick" object:nil
+     
+    userInfo:@{@"model": model}];
+}
+
+//the time picker need 6 components, but only 1 is enough for others
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    if ([self.type isEqualToString:@"course"]) {
+    if ([self.type isEqualToString:@"course"]) {       //the first picker
         return 1;
-    } else if ([self.type isEqualToString:@"time"]) {
+    } else if ([self.type isEqualToString:@"time"]) {  //the second picker
         return 6;
     } else {
-        return 1;
+        return 1;                                      //the last two pickers
     }
     
 }
+
+//define the number of rows in component for each picker
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     if ([self.type isEqualToString:@"course"]) {
         return self.courseArray.count;
@@ -89,7 +112,7 @@
         } else if (component == 2) {
             return self.dayArray.count;
         } else if (component == 3) {
-            return self.timeArray.count;
+            return self.hourArray.count;
         } else if (component == 4) {
             return self.minArray.count;
         } else {
@@ -102,7 +125,6 @@
     }
     
 }
-
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if ([self.type isEqualToString:@"course"]) {
         return self.courseArray[row];
@@ -114,7 +136,7 @@
         } else if (component == 2) {
             return self.dayArray[row];
         } else if (component == 3) {
-            return self.timeArray[row];
+            return self.hourArray[row];
         } else if (component == 4) {
             return self.minArray[row];
         } else {
@@ -127,6 +149,7 @@
     }
 }
 
+//connect each picker to the text field
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if ([self.type isEqualToString:@"course"]) {
         self.courseTextField.text = self.courseArray[row];
@@ -138,13 +161,15 @@
         } else if (component == 2) {
             self.day = self.dayArray[row];
         } else if (component == 3) {
-            self.time = self.timeArray[row];
+            self.hour = self.hourArray[row];
         } else if (component == 4) {
             self.min = self.minArray[row];
         } else {
             self.second = self.secondArray[row];
         }
-        self.timeTextField.text = [NSString stringWithFormat:@"%@-%@-%@ %@:%@:%@", self.year, self.month, self.day, self.time, self.min, self.second];
+        //each component for the time picker are connected to each string
+        //then they are shown in the text field
+        self.timeTextField.text = [NSString stringWithFormat:@"%@-%@-%@ %@:%@:%@", self.year, self.month, self.day, self.hour, self.min, self.second];
     } else if ([self.type isEqualToString:@"type"]) {
         self.typeTextField.text = self.typeArray[row];
     } else {
@@ -152,6 +177,7 @@
     }
 }
 
+//define the size and position of picker view
 - (UIPickerView *)pickView {
     if (_pickView == nil) {
         _pickView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 50, self.view.bounds.size.width, 150)];
@@ -162,7 +188,7 @@
 }
 
 
-
+//array for the course picker
 - (NSArray *)courseArray {
     if (_courseArray == nil) {
         _courseArray = [NSArray arrayWithObjects:@"ELEC2240", @"ELEC2660", @"ELEC2130", @"ELEC2430", @"ELEC2530", nil];
@@ -170,48 +196,45 @@
     return _courseArray;
 }
 
+//arrays for the time picker
 - (NSArray *)yearArray {
     if (_yearArray == nil) {
         _yearArray = [NSArray arrayWithObjects:@"2015", @"2016", @"2017", @"2018", @"2019", nil];
     }
     return _yearArray;
 }
-
 - (NSArray *)monthArray {
     if (_monthArray == nil) {
         _monthArray = [NSArray arrayWithObjects:@"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12",nil];
     }
     return _monthArray;
 }
-
 - (NSArray *)dayArray {
     if (_dayArray == nil) {
         _dayArray = [NSArray arrayWithObjects:@"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"21", @"22", @"23", @"24", @"25", @"26", @"27", @"28", @"29", @"30", @"31", nil];
     }
     return _dayArray;
 }
-
-- (NSArray *)timeArray {
-    if (_timeArray == nil) {
-        _timeArray = [NSArray arrayWithObjects:@"00", @"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"21", @"22", @"23", @"24",  nil];
+- (NSArray *)hourArray {
+    if (_hourArray == nil) {
+        _hourArray = [NSArray arrayWithObjects:@"00", @"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"21", @"22", @"23", @"24",  nil];
     }
-    return _timeArray;
+    return _hourArray;
 }
-
 - (NSArray *)minArray {
     if (_minArray == nil) {
-        _minArray = [NSArray arrayWithObjects:@"00", @"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"21", @"22", @"23", @"24",  @"25", @"26", @"27", @"28", @"29", @"30", @"31", @"32", @"33", @"34", @"35", @"36", @"37", @"38", @"39", @"40", @"41", @"42", @"43", @"44", @"45", @"46", @"47", @"48", @"49", @"50", @"51", @"52", @"53", @"54", @"55", @"56", @"57", @"58" @"59", @"60", nil];
+        _minArray = [NSArray arrayWithObjects:@"00", @"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"21", @"22", @"23", @"24",  @"25", @"26", @"27", @"28", @"29", @"30", @"31", @"32", @"33", @"34", @"35", @"36", @"37", @"38", @"39", @"40", @"41", @"42", @"43", @"44", @"45", @"46", @"47", @"48", @"49", @"50", @"51", @"52", @"53", @"54", @"55", @"56", @"57", @"58", @"59", @"60", nil];
     }
     return _minArray;
 }
-
 - (NSArray *)secondArray {
     if (_secondArray == nil) {
-        _secondArray = [NSArray arrayWithObjects:@"00", @"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"21", @"22", @"23", @"24",  @"25", @"26", @"27", @"28", @"29", @"30", @"31", @"32", @"33", @"34", @"35", @"36", @"37", @"38", @"39", @"40", @"41", @"42", @"43", @"44", @"45", @"46", @"47", @"48", @"49", @"50", @"51", @"52", @"53", @"54", @"55", @"56", @"57", @"58" @"59", @"60", nil];
+        _secondArray = [NSArray arrayWithObjects:@"00", @"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"21", @"22", @"23", @"24",  @"25", @"26", @"27", @"28", @"29", @"30", @"31", @"32", @"33", @"34", @"35", @"36", @"37", @"38", @"39", @"40", @"41", @"42", @"43", @"44", @"45", @"46", @"47", @"48", @"49", @"50", @"51", @"52", @"53", @"54", @"55", @"56", @"57", @"58", @"59", @"60", nil];
     }
     return _secondArray;
 }
 
+//array for the type picker
 - (NSArray *)typeArray {
     if (_typeArray == nil) {
         _typeArray = [NSArray arrayWithObjects:@"Problem Sheet", @"Lab Report", @"Document", @"Essay", @"Other", nil];
@@ -219,6 +242,7 @@
     return _typeArray;
 }
 
+//array for the submit picker
 - (NSArray *)submitArray {
     if (_submitArray == nil) {
         _submitArray = [NSArray arrayWithObjects:@"Online", @"Mailbox", nil];
