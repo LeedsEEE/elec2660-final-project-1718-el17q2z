@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07C6E8001FD4B9E900F3CC79 /* tableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C6E7FF1FD4B9E900F3CC79 /* tableViewController.m */; };
+		07C6E8431FD61F9D00F3CC79 /* viewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C6E8421FD61F9D00F3CC79 /* viewController.m */; };
 		07DB94B71FCDE99500CF777A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DB94B61FCDE99500CF777A /* AppDelegate.m */; };
 		07DB94BA1FCDE99500CF777A /* addViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DB94B91FCDE99500CF777A /* addViewController.m */; };
-		07DB94C01FCDE99500CF777A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DB94BE1FCDE99500CF777A /* Main.storyboard */; };
+		07DB94C01FCDE99500CF777A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DB94BE1FCDE99500CF777A /* Main.storyboard */; settings = {ASSET_TAGS = (100, 101, 102, 104, ); }; };
 		07DB94C21FCDE99600CF777A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07DB94C11FCDE99600CF777A /* Assets.xcassets */; };
 		07DB94C51FCDE99600CF777A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DB94C31FCDE99600CF777A /* LaunchScreen.storyboard */; };
 		07DB94C81FCDE99600CF777A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DB94C71FCDE99600CF777A /* main.m */; };
 		07DB94D21FCDE99600CF777A /* myDDLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DB94D11FCDE99600CF777A /* myDDLTests.m */; };
 		07DB94DD1FCDE99600CF777A /* myDDLUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DB94DC1FCDE99600CF777A /* myDDLUITests.m */; };
+		07E0CD761FD74C5E003E3927 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E0CD741FD74C5D003E3927 /* TableViewCell.m */; };
+		07E0CD771FD74C5E003E3927 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E0CD751FD74C5D003E3927 /* TableViewCell.xib */; };
+		07E0CD7A1FD74EB1003E3927 /* ClassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E0CD791FD74EB1003E3927 /* ClassModel.m */; };
+		07E0CD7E1FD75248003E3927 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E0CD7C1FD75248003E3927 /* DetailViewController.m */; };
+		07E0CD7F1FD75248003E3927 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E0CD7D1FD75248003E3927 /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07C6E7FE1FD4B9E900F3CC79 /* tableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tableViewController.h; sourceTree = "<group>"; };
-		07C6E7FF1FD4B9E900F3CC79 /* tableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tableViewController.m; sourceTree = "<group>"; };
+		07C6E8411FD61F9D00F3CC79 /* viewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = viewController.h; sourceTree = "<group>"; };
+		07C6E8421FD61F9D00F3CC79 /* viewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = viewController.m; sourceTree = "<group>"; };
 		07DB94B21FCDE99500CF777A /* myDDL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myDDL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DB94B51FCDE99500CF777A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		07DB94B61FCDE99500CF777A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,6 +59,14 @@
 		07DB94D81FCDE99600CF777A /* myDDLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myDDLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DB94DC1FCDE99600CF777A /* myDDLUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myDDLUITests.m; sourceTree = "<group>"; };
 		07DB94DE1FCDE99600CF777A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07E0CD731FD74C5D003E3927 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		07E0CD741FD74C5D003E3927 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		07E0CD751FD74C5D003E3927 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		07E0CD781FD74EB1003E3927 /* ClassModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassModel.h; sourceTree = "<group>"; };
+		07E0CD791FD74EB1003E3927 /* ClassModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassModel.m; sourceTree = "<group>"; };
+		07E0CD7B1FD75248003E3927 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		07E0CD7C1FD75248003E3927 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		07E0CD7D1FD75248003E3927 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +121,17 @@
 				07DB94B61FCDE99500CF777A /* AppDelegate.m */,
 				07DB94B81FCDE99500CF777A /* addViewController.h */,
 				07DB94B91FCDE99500CF777A /* addViewController.m */,
-				07C6E7FE1FD4B9E900F3CC79 /* tableViewController.h */,
-				07C6E7FF1FD4B9E900F3CC79 /* tableViewController.m */,
+				07C6E8411FD61F9D00F3CC79 /* viewController.h */,
+				07C6E8421FD61F9D00F3CC79 /* viewController.m */,
 				07DB94BE1FCDE99500CF777A /* Main.storyboard */,
+				07E0CD731FD74C5D003E3927 /* TableViewCell.h */,
+				07E0CD741FD74C5D003E3927 /* TableViewCell.m */,
+				07E0CD751FD74C5D003E3927 /* TableViewCell.xib */,
+				07E0CD7B1FD75248003E3927 /* DetailViewController.h */,
+				07E0CD7C1FD75248003E3927 /* DetailViewController.m */,
+				07E0CD7D1FD75248003E3927 /* DetailViewController.xib */,
+				07E0CD781FD74EB1003E3927 /* ClassModel.h */,
+				07E0CD791FD74EB1003E3927 /* ClassModel.m */,
 				07DB94C11FCDE99600CF777A /* Assets.xcassets */,
 				07DB94C31FCDE99600CF777A /* LaunchScreen.storyboard */,
 				07DB94C61FCDE99600CF777A /* Info.plist */,
@@ -199,6 +220,12 @@
 		07DB94AA1FCDE99500CF777A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					100,
+					101,
+					102,
+					104,
+				);
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "University of leeds";
 				TargetAttributes = {
@@ -244,6 +271,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				07DB94C51FCDE99600CF777A /* LaunchScreen.storyboard in Resources */,
+				07E0CD771FD74C5E003E3927 /* TableViewCell.xib in Resources */,
+				07E0CD7F1FD75248003E3927 /* DetailViewController.xib in Resources */,
 				07DB94C21FCDE99600CF777A /* Assets.xcassets in Resources */,
 				07DB94C01FCDE99500CF777A /* Main.storyboard in Resources */,
 			);
@@ -272,8 +301,11 @@
 			files = (
 				07DB94B71FCDE99500CF777A /* AppDelegate.m in Sources */,
 				07DB94C81FCDE99600CF777A /* main.m in Sources */,
+				07E0CD7A1FD74EB1003E3927 /* ClassModel.m in Sources */,
+				07C6E8431FD61F9D00F3CC79 /* viewController.m in Sources */,
+				07E0CD761FD74C5E003E3927 /* TableViewCell.m in Sources */,
 				07DB94BA1FCDE99500CF777A /* addViewController.m in Sources */,
-				07C6E8001FD4B9E900F3CC79 /* tableViewController.m in Sources */,
+				07E0CD7E1FD75248003E3927 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
