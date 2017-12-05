@@ -1,14 +1,13 @@
 //
-//  FirstViewController.h
+//  viewController.h
 //  myDDL
 //
-//  Created by 周千惠 on 2017/11/28.
+//  Created by 周千惠 on 2017/12/5.
 //  Copyright © 2017年 University of leeds. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface addViewController : UIViewController
+@interface viewController : UIViewController
 
 @end
-
