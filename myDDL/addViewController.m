@@ -56,6 +56,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+//hide the navigation bar
+//the navigation bar is not needed in this view
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
@@ -77,6 +79,8 @@
     [self.pickView reloadAllComponents];
 }
 
+//this button send all the details in 4 textfields to model
+//the details are saved in the ClassModel
 - (IBAction)ddLButtonClick:(UIButton *)sender {
     ClassModel *model = [[ClassModel alloc] init];
     model.name = self.courseTextField.text;
@@ -84,7 +88,6 @@
     model.type = self.typeTextField.text;
     model.submit = self.submitTextField.text;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ddLButtonClick" object:nil
-     
     userInfo:@{@"model": model}];
 }
 
@@ -100,31 +103,32 @@
     
 }
 
-//define the number of rows in component for each picker
+//define number of rows in each components for pickers
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     if ([self.type isEqualToString:@"course"]) {
-        return self.courseArray.count;
+        return self.courseArray.count; //which is 5
     } else if ([self.type isEqualToString:@"time"]) {
         if (component == 0) {
-            return self.yearArray.count;
+            return self.yearArray.count; //which is 5
         } else if (component == 1) {
-            return self.monthArray.count;
+            return self.monthArray.count; //which is 12
         } else if (component == 2) {
-            return self.dayArray.count;
+            return self.dayArray.count; //which is 31
         } else if (component == 3) {
-            return self.hourArray.count;
+            return self.hourArray.count; //which is 24
         } else if (component == 4) {
-            return self.minArray.count;
+            return self.minArray.count; //which is 60
         } else {
-            return self.secondArray.count;
+            return self.secondArray.count; //which is also 60
         }
     } else if ([self.type isEqualToString:@"type"]) {
-        return self.typeArray.count;
+        return self.typeArray.count; //which is 5
     } else  {
-        return self.submitArray.count;
+        return self.submitArray.count; //which is 2
     }
-    
 }
+
+//define the content in each row for the picker
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if ([self.type isEqualToString:@"course"]) {
         return self.courseArray[row];
@@ -149,7 +153,7 @@
     }
 }
 
-//connect each picker to the text field
+//connect each picker to the text field (sent the details user selected to the text field)
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if ([self.type isEqualToString:@"course"]) {
         self.courseTextField.text = self.courseArray[row];
@@ -167,7 +171,7 @@
         } else {
             self.second = self.secondArray[row];
         }
-        //each component for the time picker are connected to each string
+        //each component for the time picker are connected to each string(year/month/day/hour/min/second)
         //then they are shown in the text field
         self.timeTextField.text = [NSString stringWithFormat:@"%@-%@-%@ %@:%@:%@", self.year, self.month, self.day, self.hour, self.min, self.second];
     } else if ([self.type isEqualToString:@"type"]) {
@@ -186,7 +190,6 @@
     }
     return _pickView;
 }
-
 
 //array for the course picker
 - (NSArray *)courseArray {

@@ -13,6 +13,7 @@
 
 @interface viewController () <UITableViewDelegate, UITableViewDataSource>
 
+//connect the table view with this file
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
@@ -29,6 +30,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newCourseNoti:) name:@"ddLButtonClick" object:nil];
 }
 
+//connect the dataArray(for each cell) with the ClassModel
 - (void)newCourseNoti:(NSNotification *)notify {
     NSLog(@"%@", notify.userInfo);
     ClassModel *model = notify.userInfo[@"model"];
@@ -36,11 +38,13 @@
     [self.tableView reloadData];
 }
 
+//hide the navigation bar in the view controller on the right hand side
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
 }
 
+//show the navigation bar in the detail view controller
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     self.navigationController.navigationBarHidden = NO;
@@ -51,10 +55,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+//define each row in the table view (connect dataArray with cells)
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataArray.count;
 }
 
+//connect the file 'TableViewCell'
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"TableViewCell";
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
@@ -62,12 +68,13 @@
     NSMutableString *stirng = [[NSMutableString alloc] initWithString:model.time];
     NSString *result = [stirng substringWithRange:NSMakeRange(0, 10)];
     
+    //define the 2 labels in the cell
     cell.nameLabel.text = model.name;
     cell.timeLabel.text = [self intervalSinceNow:model.time];
     return cell;
 }
 
-//to delete the countdown that the user don't need
+//a method to delete the countdown that the user don't need
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -78,6 +85,7 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
