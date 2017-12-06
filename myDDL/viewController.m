@@ -78,7 +78,6 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        
         //remove the data
         [_dataArray removeObjectAtIndex:indexPath.row];
         //remove the data in the table view
@@ -86,22 +85,26 @@
     }
 }
 
-
+//?????
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     ClassModel *model = self.dataArray[indexPath.row];
     DetailViewController *vc = [[DetailViewController alloc] init];
     vc.model = model;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+
+
+//a method to calculate the time interval
 - (NSString *)intervalSinceNow: (NSString *) theDate
 {
     NSArray *timeArray=[theDate componentsSeparatedByString:@"."];
     theDate=[timeArray objectAtIndex:0];
     
     NSDateFormatter *date=[[NSDateFormatter alloc] init];
-    [date setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [date setDateFormat:@"yyyy-MM-dd HH:00:00"];
     NSDate *d=[date dateFromString:theDate];
     
     NSTimeInterval late=[d timeIntervalSince1970]*1;
@@ -111,17 +114,20 @@
     
     NSTimeInterval cha=late-now;
     
+    //if the time interval is less than 1 hour
     if (cha/3600<1) {
         timeString = [NSString stringWithFormat:@"%f", cha/60];
         timeString = [timeString substringToIndex:timeString.length-7];
         timeString=[NSString stringWithFormat:@"%@ mins", timeString];
         
     }
+    //if the time interval is less than 1 day
     if (cha/3600>1&&cha/86400<1) {
         timeString = [NSString stringWithFormat:@"%f", cha/3600];
         timeString = [timeString substringToIndex:timeString.length-7];
         timeString=[NSString stringWithFormat:@"%@ hours", timeString];
     }
+    //if the time interval is more than 1 day
     if (cha/86400>1)
     {
         timeString = [NSString stringWithFormat:@"%f", cha/86400];
@@ -129,10 +135,10 @@
         timeString=[NSString stringWithFormat:@"%@ days", timeString];
         
     }
-    
     return timeString;
 }
 
+//when the user select a time which has passed
 - (NSString *)compareCurrentTime:(NSString *)str {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];

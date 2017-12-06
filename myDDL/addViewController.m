@@ -25,16 +25,14 @@
 @property (nonatomic, strong) NSArray *monthArray;
 @property (nonatomic, strong) NSArray *dayArray;
 @property (nonatomic, strong) NSArray *hourArray;
-@property (nonatomic, strong) NSArray *minArray;
-@property (nonatomic, strong) NSArray *secondArray;
+
 
 //variables for the 'time' text field
 @property (nonatomic, copy) NSString *year;
 @property (nonatomic, copy) NSString *month;
 @property (nonatomic, copy) NSString *day;
 @property (nonatomic, copy) NSString *hour;
-@property (nonatomic, copy) NSString *min;
-@property (nonatomic, copy) NSString *second;
+
 
 //arrays needed for the other 3 picker
 @property (nonatomic, strong) NSArray *courseArray;
@@ -96,7 +94,7 @@
     if ([self.type isEqualToString:@"course"]) {       //the first picker
         return 1;
     } else if ([self.type isEqualToString:@"time"]) {  //the second picker
-        return 6;
+        return 4;
     } else {
         return 1;                                      //the last two pickers
     }
@@ -114,12 +112,8 @@
             return self.monthArray.count; //which is 12
         } else if (component == 2) {
             return self.dayArray.count; //which is 31
-        } else if (component == 3) {
-            return self.hourArray.count; //which is 24
-        } else if (component == 4) {
-            return self.minArray.count; //which is 60
         } else {
-            return self.secondArray.count; //which is also 60
+            return self.hourArray.count; //which is 24
         }
     } else if ([self.type isEqualToString:@"type"]) {
         return self.typeArray.count; //which is 5
@@ -139,12 +133,8 @@
             return self.monthArray[row];
         } else if (component == 2) {
             return self.dayArray[row];
-        } else if (component == 3) {
-            return self.hourArray[row];
-        } else if (component == 4) {
-            return self.minArray[row];
         } else {
-            return self.secondArray[row];
+            return self.hourArray[row];
         }
     } else if ([self.type isEqualToString:@"type"]) {
         return self.typeArray[row];
@@ -164,16 +154,12 @@
             self.month = self.monthArray[row];
         } else if (component == 2) {
             self.day = self.dayArray[row];
-        } else if (component == 3) {
-            self.hour = self.hourArray[row];
-        } else if (component == 4) {
-            self.min = self.minArray[row];
         } else {
-            self.second = self.secondArray[row];
+            self.hour = self.hourArray[row];
         }
         //each component for the time picker are connected to each string(year/month/day/hour/min/second)
         //then they are shown in the text field
-        self.timeTextField.text = [NSString stringWithFormat:@"%@-%@-%@ %@:%@:%@", self.year, self.month, self.day, self.hour, self.min, self.second];
+        self.timeTextField.text = [NSString stringWithFormat:@"%@-%@-%@ %@:00:00", self.year, self.month, self.day, self.hour];
     } else if ([self.type isEqualToString:@"type"]) {
         self.typeTextField.text = self.typeArray[row];
     } else {
@@ -223,18 +209,6 @@
         _hourArray = [NSArray arrayWithObjects:@"00", @"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"21", @"22", @"23", @"24",  nil];
     }
     return _hourArray;
-}
-- (NSArray *)minArray {
-    if (_minArray == nil) {
-        _minArray = [NSArray arrayWithObjects:@"00", @"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"21", @"22", @"23", @"24",  @"25", @"26", @"27", @"28", @"29", @"30", @"31", @"32", @"33", @"34", @"35", @"36", @"37", @"38", @"39", @"40", @"41", @"42", @"43", @"44", @"45", @"46", @"47", @"48", @"49", @"50", @"51", @"52", @"53", @"54", @"55", @"56", @"57", @"58", @"59", @"60", nil];
-    }
-    return _minArray;
-}
-- (NSArray *)secondArray {
-    if (_secondArray == nil) {
-        _secondArray = [NSArray arrayWithObjects:@"00", @"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"21", @"22", @"23", @"24",  @"25", @"26", @"27", @"28", @"29", @"30", @"31", @"32", @"33", @"34", @"35", @"36", @"37", @"38", @"39", @"40", @"41", @"42", @"43", @"44", @"45", @"46", @"47", @"48", @"49", @"50", @"51", @"52", @"53", @"54", @"55", @"56", @"57", @"58", @"59", @"60", nil];
-    }
-    return _secondArray;
 }
 
 //array for the type picker
