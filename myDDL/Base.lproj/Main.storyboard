@@ -17,72 +17,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePk-iS-OYE">
-                                <rect key="frame" x="20" y="439" width="50" height="28"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePk-iS-OYE">
+                                <rect key="frame" x="20" y="442" width="48.5" height="25"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Course:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZh-hT-g39">
-                                <rect key="frame" x="19" y="316" width="78" height="28"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZh-hT-g39">
+                                <rect key="frame" x="19" y="319" width="69" height="25"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Submit:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlY-jJ-1h6">
-                                <rect key="frame" x="20" y="499" width="69.5" height="28"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submit:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlY-jJ-1h6">
+                                <rect key="frame" x="20" y="499" width="70" height="28"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WKF-XL-Y4F">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WKF-XL-Y4F">
                                 <rect key="frame" x="113" y="316" width="246" height="30"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xa1-Bz-alW">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xa1-Bz-alW">
                                 <rect key="frame" x="113" y="498" width="246" height="30"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNQ-yw-7lL">
-                                <rect key="frame" x="20" y="380" width="51" height="28"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNQ-yw-7lL">
+                                <rect key="frame" x="20" y="383" width="48.5" height="25"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="goH-9o-1oQ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="goH-9o-1oQ">
                                 <rect key="frame" x="113" y="378" width="246" height="30"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OjX-lT-adG">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OjX-lT-adG">
                                 <rect key="frame" x="113" y="438" width="246" height="30"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ec-NT-rsK">
@@ -121,7 +121,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select details about your deadline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PM6-lI-e9x">
-                                <rect key="frame" x="18" y="244.5" width="339" height="26.5"/>
+                                <rect key="frame" x="18" y="244" width="339" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -130,8 +130,12 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Zx1-Fm-GXG" secondAttribute="trailing" constant="16" id="1wA-xs-EhE"/>
+                            <constraint firstItem="4uT-6E-YF6" firstAttribute="top" secondItem="MlY-jJ-1h6" secondAttribute="bottom" constant="26" id="2TD-Zv-DQ7"/>
                             <constraint firstItem="Xa1-Bz-alW" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="113" id="7qF-Oi-gfb"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="ePk-iS-OYE" secondAttribute="trailing" constant="306.5" id="8KM-LC-YZR"/>
+                            <constraint firstItem="Zx1-Fm-GXG" firstAttribute="leading" secondItem="ePk-iS-OYE" secondAttribute="trailing" constant="44.5" id="8h5-n2-1iL"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="OjX-lT-adG" secondAttribute="trailing" constant="16" id="9eA-bP-uf7"/>
+                            <constraint firstItem="Xa1-Bz-alW" firstAttribute="leading" secondItem="MlY-jJ-1h6" secondAttribute="trailing" constant="23" id="Ag7-v1-rxz"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="5Ec-NT-rsK" secondAttribute="trailing" constant="16" id="ArX-GE-s2f"/>
                             <constraint firstItem="ePk-iS-OYE" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="B18-tk-uHP"/>
                             <constraint firstItem="4uT-6E-YF6" firstAttribute="top" secondItem="3gW-P3-rJh" secondAttribute="bottom" constant="25" id="Egc-aL-yk6"/>
@@ -139,6 +143,7 @@
                             <constraint firstItem="WKF-XL-Y4F" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="113" id="FsV-gG-E8X"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="WKF-XL-Y4F" secondAttribute="trailing" constant="16" id="I0S-jT-TyZ"/>
                             <constraint firstItem="goH-9o-1oQ" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="113" id="Jd9-5c-vU6"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="eNQ-yw-7lL" secondAttribute="trailing" constant="306.5" id="KSx-Jc-vfT"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="3gW-P3-rJh" secondAttribute="trailing" constant="16" id="Lcd-Kl-sgR"/>
                             <constraint firstItem="Z0K-bb-YQc" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="113" id="LjE-t2-hVK"/>
                             <constraint firstItem="LZh-hT-g39" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="19" id="Lqv-dW-RxJ"/>
@@ -154,9 +159,12 @@
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Z0K-bb-YQc" secondAttribute="trailing" constant="16" id="XKv-v6-tlV"/>
                             <constraint firstItem="PM6-lI-e9x" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="18" id="XyH-xz-tgy"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="LZh-hT-g39" secondAttribute="bottom" constant="274" id="b3h-X2-tdm"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="MlY-jJ-1h6" secondAttribute="bottom" constant="91" id="cIQ-ic-Ces"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="PM6-lI-e9x" secondAttribute="trailing" constant="18" id="fK8-hf-SU7"/>
                             <constraint firstItem="3gW-P3-rJh" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="113" id="fUX-Mp-q0d"/>
+                            <constraint firstItem="MlY-jJ-1h6" firstAttribute="leading" secondItem="ePk-iS-OYE" secondAttribute="leading" id="fbU-eE-REj"/>
+                            <constraint firstItem="MlY-jJ-1h6" firstAttribute="centerY" secondItem="Xa1-Bz-alW" secondAttribute="centerY" id="gj0-Mw-mdE"/>
+                            <constraint firstItem="5Ec-NT-rsK" firstAttribute="leading" secondItem="LZh-hT-g39" secondAttribute="trailing" constant="25" id="kBg-Wb-VVh"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="LZh-hT-g39" secondAttribute="trailing" constant="287" id="lZJ-KZ-3BG"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="goH-9o-1oQ" secondAttribute="trailing" constant="16" id="oeD-Om-e5n"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="WKF-XL-Y4F" secondAttribute="bottom" constant="272" id="ops-Dr-rSj"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="4uT-6E-YF6" secondAttribute="trailing" id="p80-Ua-hC9"/>
@@ -164,8 +172,8 @@
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="eNQ-yw-7lL" secondAttribute="bottom" constant="210" id="sMc-xP-6ul"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="goH-9o-1oQ" secondAttribute="bottom" constant="210" id="ubT-eh-DaP"/>
                             <constraint firstItem="eNQ-yw-7lL" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="vhe-XD-otg"/>
+                            <constraint firstItem="Z0K-bb-YQc" firstAttribute="leading" secondItem="eNQ-yw-7lL" secondAttribute="trailing" constant="44.5" id="xDF-BI-fvO"/>
                             <constraint firstItem="OjX-lT-adG" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="113" id="xaG-ij-e4f"/>
-                            <constraint firstItem="MlY-jJ-1h6" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="y7J-jW-Z0o"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="5Ec-NT-rsK" secondAttribute="bottom" constant="273" id="ysF-Pp-wdO"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="Zx1-Fm-GXG" secondAttribute="bottom" constant="151" id="z1A-GK-sph"/>
                         </constraints>
