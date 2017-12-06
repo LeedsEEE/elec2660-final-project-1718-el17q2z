@@ -67,6 +67,18 @@
     return cell;
 }
 
+//to delete the countdown that the user don't need
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        //remove the data
+        [_dataArray removeObjectAtIndex:indexPath.row];
+        //remove the data in the table view
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     ClassModel *model = self.dataArray[indexPath.row];
