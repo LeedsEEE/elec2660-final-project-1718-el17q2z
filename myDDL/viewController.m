@@ -94,19 +94,19 @@
     if (cha/3600<1) {
         timeString = [NSString stringWithFormat:@"%f", cha/60];
         timeString = [timeString substringToIndex:timeString.length-7];
-        timeString=[NSString stringWithFormat:@"remain--%@--mins", timeString];
+        timeString=[NSString stringWithFormat:@"%@ mins", timeString];
         
     }
     if (cha/3600>1&&cha/86400<1) {
         timeString = [NSString stringWithFormat:@"%f", cha/3600];
         timeString = [timeString substringToIndex:timeString.length-7];
-        timeString=[NSString stringWithFormat:@"remain--%@---hours", timeString];
+        timeString=[NSString stringWithFormat:@"%@ hours", timeString];
     }
     if (cha/86400>1)
     {
         timeString = [NSString stringWithFormat:@"%f", cha/86400];
         timeString = [timeString substringToIndex:timeString.length-7];
-        timeString=[NSString stringWithFormat:@"remain--%@--days", timeString];
+        timeString=[NSString stringWithFormat:@"%@ days", timeString];
         
     }
     

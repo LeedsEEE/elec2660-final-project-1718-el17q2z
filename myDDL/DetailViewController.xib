@@ -23,37 +23,49 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1E7-QX-pbR">
-                    <rect key="frame" x="166" y="98" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1E7-QX-pbR">
+                    <rect key="frame" x="80" y="104" width="215" height="32"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkq-EP-aDi">
-                    <rect key="frame" x="166" y="231" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkq-EP-aDi">
+                    <rect key="frame" x="55" y="276" width="266" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZyO-pD-H7j">
-                    <rect key="frame" x="166" y="300" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZyO-pD-H7j">
+                    <rect key="frame" x="54" y="370" width="266" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDB-9Y-CfY">
-                    <rect key="frame" x="166" y="376" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDB-9Y-CfY">
+                    <rect key="frame" x="54" y="464" width="266" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1E7-QX-pbR" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="84" id="1OH-Do-Yzf"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="zDB-9Y-CfY" secondAttribute="trailing" constant="55" id="53K-Zq-Pe3"/>
+                <constraint firstItem="ZyO-pD-H7j" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="54" id="6cB-f1-s1H"/>
+                <constraint firstItem="wkq-EP-aDi" firstAttribute="top" secondItem="1E7-QX-pbR" secondAttribute="bottom" constant="140" id="AaI-4s-IEk"/>
+                <constraint firstItem="wkq-EP-aDi" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="55" id="H8N-u1-pjV"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="wkq-EP-aDi" secondAttribute="trailing" constant="54" id="IpJ-Hr-jof"/>
+                <constraint firstItem="zDB-9Y-CfY" firstAttribute="top" secondItem="ZyO-pD-H7j" secondAttribute="bottom" constant="70" id="Ngc-bG-ifl"/>
+                <constraint firstItem="1E7-QX-pbR" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="80" id="XW5-8v-7P9"/>
+                <constraint firstItem="ZyO-pD-H7j" firstAttribute="top" secondItem="wkq-EP-aDi" secondAttribute="bottom" constant="70" id="dBo-wK-hpc"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="ZyO-pD-H7j" secondAttribute="trailing" constant="55" id="lXH-RF-elQ"/>
+                <constraint firstItem="ZyO-pD-H7j" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="wu5-Mb-7Iv"/>
+                <constraint firstItem="zDB-9Y-CfY" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="54" id="xsF-6k-cby"/>
+                <constraint firstItem="1E7-QX-pbR" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="z4C-7h-XIG"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
 </document>
