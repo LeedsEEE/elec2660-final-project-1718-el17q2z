@@ -10,8 +10,8 @@
 
 @interface TableViewCell : UITableViewCell
 
+//two labels in the cell are connected here
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-
 
 @end

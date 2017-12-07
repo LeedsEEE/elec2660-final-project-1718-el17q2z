@@ -11,17 +11,16 @@
 
 @interface DetailViewController ()
 
+//four labels here are for showing details (course/time/type/submit)
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
-
 @property (weak, nonatomic) IBOutlet UILabel *label3;
 @property (weak, nonatomic) IBOutlet UILabel *label4;
-
-
 @end
 
 @implementation DetailViewController
 
+//data in the ClassModel are send to the labels
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.

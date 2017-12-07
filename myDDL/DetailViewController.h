@@ -12,6 +12,7 @@
 
 @interface DetailViewController : UIViewController
 
+//ClassModel is used in the DetailViewController
 @property (nonatomic, strong) ClassModel *model;
 
 @end

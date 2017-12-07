@@ -10,6 +10,7 @@
 
 @interface ClassModel : NSObject
 
+//this is the class that store data (details about deadline)
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *time;
 @property (nonatomic, copy) NSString *type;
