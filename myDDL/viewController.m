@@ -85,7 +85,6 @@
     }
 }
 
-//?????
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
@@ -95,9 +94,7 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-
-
-//a method to calculate the time interval
+//a method to calculate the time interval and show the countdown
 - (NSString *)intervalSinceNow: (NSString *) theDate
 {
     NSArray *timeArray=[theDate componentsSeparatedByString:@"."];
@@ -114,63 +111,45 @@
     
     NSTimeInterval cha=late-now;
     
+    //if the user select a past time
+    if (cha/3600<0) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"ERROR"
+        message: @"You've chosen a past time, Please select again"
+                                              
+        preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okayAction = [UIAlertAction actionWithTitle:@"OK"
+                                     
+        style:UIAlertActionStyleDefault
+        handler:^(UIAlertAction *action) {
+            NSLog(@"OK");
+        }];
+        [alertController addAction:okayAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+        timeString = [NSString stringWithFormat:@"ERROR"];
+    }
+    
     //if the time interval is less than 1 hour
-    if (cha/3600<1) {
+    if (cha/3600>0&&cha/3600<1) {
         timeString = [NSString stringWithFormat:@"%f", cha/60];
         timeString = [timeString substringToIndex:timeString.length-7];
-        timeString=[NSString stringWithFormat:@"%@ mins", timeString];
+        timeString = [NSString stringWithFormat:@"%@ mins", timeString];
         
     }
     //if the time interval is less than 1 day
     if (cha/3600>1&&cha/86400<1) {
         timeString = [NSString stringWithFormat:@"%f", cha/3600];
         timeString = [timeString substringToIndex:timeString.length-7];
-        timeString=[NSString stringWithFormat:@"%@ hours", timeString];
+        timeString = [NSString stringWithFormat:@"%@ hours", timeString];
     }
     //if the time interval is more than 1 day
     if (cha/86400>1)
     {
         timeString = [NSString stringWithFormat:@"%f", cha/86400];
         timeString = [timeString substringToIndex:timeString.length-7];
-        timeString=[NSString stringWithFormat:@"%@ days", timeString];
-        
+        timeString = [NSString stringWithFormat:@"%@ days", timeString];
     }
     return timeString;
-}
-
-//when the user select a time which has passed
-- (NSString *)compareCurrentTime:(NSString *)str {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    NSDate *timeDate = [dateFormatter dateFromString:str];
-    NSTimeInterval  timeInterval = [timeDate timeIntervalSinceNow];
-    NSLog(@"%f", timeInterval);
-    timeInterval = -timeInterval;
-    timeInterval = timeInterval - 8*60*60;
-    long temp = 0;
-    NSString *result;
-    if (timeInterval < 60) {
-        result = [NSString stringWithFormat:@"just now"];
-    }
-    else if((temp = timeInterval/60) <60){
-        result = [NSString stringWithFormat:@"%ld mins before",temp];
-    }
-    
-    else if((temp = temp/60) <24){
-        result = [NSString stringWithFormat:@"%ld hours ago",temp];
-    }
-    
-    else if((temp = temp/24) <30){
-        result = [NSString stringWithFormat:@"%ld days ago",temp];
-    }
-    else if((temp = temp/30) <12){
-        result = [NSString stringWithFormat:@"%ld months ago",temp];
-    }
-    else{
-        temp = temp/12;
-        result = [NSString stringWithFormat:@"%ld years ago",temp];
-    }
-    return  result;
 }
 
 - (NSMutableArray *)dataArray {
@@ -179,7 +158,6 @@
     }
     return _dataArray;
 }
-
 
 /*
 #pragma mark - Navigation
